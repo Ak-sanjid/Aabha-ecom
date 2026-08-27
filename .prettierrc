@@ -1,0 +1,17 @@
+{
+  "semi": true,
+  "singleQuote": true,
+  "trailingComma": "all",
+  "printWidth": 100,
+  "tabWidth": 2,
+  "arrowParens": "always",
+  "endOfLine": "lf",
+  "plugins": ["prettier-plugin-tailwindcss"],
+  "tailwindConfig": "./apps/frontend/tailwind.config.ts",
+  "overrides": [
+    {
+      "files": ["**/*.json"],
+      "options": { "printWidth": 80 }
+    }
+  ]
+}
