@@ -1,0 +1,60 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  /*
+   * Only structural defaults live here. Every colour, font and radius comes
+   * from the CSS variables injected at runtime from the theme_settings table
+   * (see src/theme/tokens.ts) — never hardcode a value in this file.
+   */
+  html {
+    -webkit-text-size-adjust: 100%;
+    scroll-behavior: smooth;
+  }
+
+  body {
+    @apply bg-canvas font-body text-ink antialiased;
+    font-size: var(--aabha-font-size-base, 16px);
+  }
+
+  /* Bangla copy switches to a Bangla-optimised stack automatically. */
+  html[data-locale='bn'] body {
+    @apply font-bangla;
+  }
+
+  h1,
+  h2,
+  h3,
+  h4 {
+    @apply font-display;
+    font-weight: var(--aabha-font-weight-heading, 600);
+  }
+
+  ::selection {
+    background: var(--aabha-color-primary-soft);
+    color: var(--aabha-color-ink);
+  }
+
+  :focus-visible {
+    outline: 2px solid var(--aabha-color-primary);
+    outline-offset: 2px;
+  }
+}
+
+@layer components {
+  .aabha-container {
+    @apply mx-auto w-full max-w-container px-4;
+  }
+
+  .aabha-card {
+    @apply rounded-lg border border-line bg-surface shadow-card;
+  }
+
+  /* Grey is permitted here and nowhere else. */
+  .aabha-review-surface {
+    background-color: var(--aabha-color-review-surface);
+    border-color: var(--aabha-color-review-border);
+    color: var(--aabha-color-review-ink);
+  }
+}

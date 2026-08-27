@@ -1,0 +1,32 @@
+{
+  "name": "aabha",
+  "version": "0.1.0",
+  "private": true,
+  "description": "Aabha — Beauty & Personal Care e-commerce platform for Bangladesh",
+  "packageManager": "pnpm@9.15.4",
+  "engines": {
+    "node": ">=20.11.0"
+  },
+  "scripts": {
+    "dev": "turbo run dev --parallel",
+    "build": "turbo run build",
+    "start": "turbo run start",
+    "lint": "turbo run lint",
+    "lint:fix": "turbo run lint -- --fix",
+    "typecheck": "turbo run typecheck",
+    "test": "turbo run test",
+    "format": "prettier --write \"**/*.{ts,tsx,js,jsx,json,md,yaml,yml,css}\"",
+    "format:check": "prettier --check \"**/*.{ts,tsx,js,jsx,json,md,yaml,yml,css}\"",
+    "db:generate": "pnpm --filter @aabha/backend db:generate",
+    "db:push": "pnpm --filter @aabha/backend db:push",
+    "db:migrate": "pnpm --filter @aabha/backend db:migrate",
+    "db:seed": "pnpm --filter @aabha/backend db:seed",
+    "clean": "turbo run clean && rm -rf node_modules"
+  },
+  "devDependencies": {
+    "prettier": "^3.4.2",
+    "prettier-plugin-tailwindcss": "^0.6.9",
+    "turbo": "^2.3.3",
+    "typescript": "^5.7.3"
+  }
+}
